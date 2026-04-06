@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1: Fisik & Antarmuka — Jazz Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">🎓 Jazz Academy</a>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="pertemuan-1.html" class="active">P1</a>
+            <a href="pertemuan-2.html">P2</a>
+            <a href="pertemuan-3.html">P3</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <header class="lesson-header">
+        <h1>Fisik & Antarmuka</h1>
+        <p class="lesson-meta">Materi 6: Arsitektur Komputer & Materi 5: IMK</p>
+    </header>
+
+    <div class="content-layout">
+        <div class="materi-container">
+            <!-- BAGIAN 01 -->
+            <div class="materi-card">
+                <h2>01. Organisasi & Arsitektur Komputer</h2>
+                <p>Komputer bukan hanya sekumpulan kabel dan besi. Ia adalah sebuah sistem yang bekerja sangat rapi untuk mengubah aliran listrik menjadi informasi yang kita lihat di layar. Mari kita bedah bagian-bagiannya:</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800" class="module-img" onclick="openModal('CPU: Sang Otak', 'CPU mengeksekusi milyaran perintah per detik menggunakan transistor mikroskopis.')">
+                    <h3 style="margin-top:1rem;">A. CPU (Central Processing Unit)</h3>
+                    <p>CPU adalah "otak" utama. Tugasnya adalah menghitung (Aritmatika) dan mengambil keputusan (Logika). Tanpa CPU, komputer tidak bisa berpikir. Kecepatannya diukur dalam GigaHertz (GHz)—semakin tinggi angkanya, semakin cepat ia memproses perintahmu.</p>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?w=800" class="module-img" onclick="openModal('RAM: Meja Kerja', 'RAM menyimpan data aplikasi yang sedang aktif agar bisa diakses CPU secara instan.')">
+                    <h3 style="margin-top:1rem;">B. RAM (Random Access Memory)</h3>
+                    <p>RAM adalah memori jangka pendek. Saat kamu membuka game atau browser, data dipindahkan ke RAM agar CPU bisa mengambilnya dengan sangat cepat. Namun, RAM bersifat <i>volatile</i>: datanya akan terhapus total saat komputer dimatikan.</p>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <img src="https://images.unsplash.com/photo-1616119334020-68082369519e?w=800" class="module-img" onclick="openModal('SSD: Gudang Data', 'SSD jauh lebih cepat dan tahan banting dibanding HDD karena tidak memiliki bagian yang berputar.')">
+                    <h3 style="margin-top:1rem;">C. Storage (SSD/HDD)</h3>
+                    <p>Berbeda dengan RAM, SSD adalah gudang penyimpanan permanen. Semua foto, aplikasi, dan sistem operasi Windows tersimpan di sini selamanya. SSD modern jauh lebih cepat daripada HDD lama, membuat waktu <i>loading</i> aplikasi menjadi hanya hitungan detik.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>💡 Alur Kerja Komputer:</h4>
+                    <p><b>Input</b> (Mouse/Keyboard) ➔ <b>RAM</b> (Data mengantre) ➔ <b>CPU</b> (Data diproses) ➔ <b>Output</b> (Tampil di Layar).</p>
+                </div>
+            </div>
+
+            <!-- BAGIAN 02 -->
+            <div class="materi-card">
+                <h2>02. Interaksi Manusia & Komputer (IMK)</h2>
+                <p>Pernahkah kamu menggunakan aplikasi yang sangat sulit dipahami? Itu tandanya IMK-nya buruk. IMK adalah ilmu tentang cara mendesain teknologi agar manusia bisa menggunakannya dengan mudah tanpa rasa bingung.</p>
+                
+                <img src="https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?w=800" class="module-img" onclick="openModal('Prinsip UX', 'Desain yang baik adalah desain yang tidak terlihat (invisible) karena penggunanya merasa sangat nyaman.')">
+                
+                <h3 style="margin-top:1.5rem;">Prinsip Utama IMK:</h3>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><b>Usability:</b> Seberapa mudah aplikasi dipelajari oleh pengguna baru?</li>
+                    <li><b>Feedback:</b> Apakah komputer memberi respon? (Misal: Tombol berubah warna saat diklik).</li>
+                    <li><b>Affordance:</b> Bentuk tombol harus menunjukkan fungsinya (Misal: Tombol 'Play' berbentuk segitiga).</li>
+                </ul>
+                <p style="margin-top:1rem;">Tujuan akhir IMK adalah menciptakan <b>User Experience (UX)</b> yang menyenangkan, sehingga orang suka menggunakan produk kita.</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                <a href="index.html" class="btn btn-outline" style="width: auto;">← Beranda</a>
+                <a href="pertemuan-2.html" class="btn" style="width: auto;">Lanjut ke P2 →</a>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sim-card">
+                <h3>🕹️ Simulator Siklus</h3>
+                <p class="sim-desc">Lihat alur data dari Input hingga Output secara visual.</p>
+                <button class="btn" onclick="runSim()" id="btn-run">Jalankan Siklus ➔</button>
+                <div class="hw-flow">
+                    <div class="hw-box" id="s1">In</div><div class="hw-box" id="s2">RAM</div><div class="hw-box" id="s3">CPU</div><div class="hw-box" id="s4">Out</div>
+                </div>
+                <div class="status-log" id="log">Siap menerima perintah...</div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<div id="detailModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle">Detail Materi</h3>
+        <p id="modalDesc">Memuat materi...</p>
+        <button class="btn" onclick="closeModal()" style="margin-top: 1.5rem; background: var(--bg); color: var(--text-main); border: 1px solid var(--border);">Tutup Bacaan</button>
+    </div>
+</div>
+
+<script>
+function openModal(t, d) { document.getElementById('modalTitle').innerText = t; document.getElementById('modalDesc').innerText = d; document.getElementById('detailModal').style.display = 'flex'; }
+function closeModal() { document.getElementById('detailModal').style.display = 'none'; }
+function runSim() {
+    const btn = document.getElementById('btn-run');
+    const log = document.getElementById('log');
+    const steps = ['s1','s2','s3','s4'];
+    const msgs = ["Data dikirim...", "Disimpan di memori...", "Dihitung oleh otak...", "Berhasil muncul!"];
+    btn.disabled = true;
+    let i = 0;
+    const interval = setInterval(() => {
+        steps.forEach(s => document.getElementById(s).classList.remove('active'));
+        document.getElementById(steps[i]).classList.add('active');
+        log.innerText = "> " + msgs[i];
+        i++;
+        if (i >= steps.length) {
+            clearInterval(interval);
+            setTimeout(() => { btn.disabled = false; steps.forEach(s => document.getElementById(s).classList.remove('active')); log.innerText = "Siklus Selesai."; }, 1000);
+        }
+    }, 700);
+}
+</script>
+</body>
+</html>

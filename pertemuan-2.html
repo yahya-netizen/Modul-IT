@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2: Otak & Bahasa Mesin — Jazz Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .budget-bar { height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; margin: 1rem 0; }
+        .budget-fill { height: 100%; width: 0%; background: var(--success); transition: 0.3s; }
+        .item-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem; }
+        .item-btn { padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; cursor: pointer; text-align: left; }
+        .array-view { background: #0f172a; color: #38bdf8; padding: 1.25rem; border-radius: 8px; font-family: monospace; font-size: 0.85rem; margin-top: 1.5rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">🎓 Jazz Academy</a>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="pertemuan-1.html">P1</a>
+            <a href="pertemuan-2.html" class="active">P2</a>
+            <a href="pertemuan-3.html">P3</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <header class="lesson-header">
+        <h1>Otak & Bahasa Mesin</h1>
+        <p class="lesson-meta">Topik: 3. Logika Informatika • 2. Dasar Pemrograman • 1. Algoritma</p>
+    </header>
+
+    <div class="content-layout">
+        <div class="materi-container">
+            <!-- BAGIAN 01 -->
+            <div class="materi-card">
+                <h2>01. Logika Informatika & Dasar Pemrograman</h2>
+                <p>Bagaimana mesin bisa "berpikir"? Jawabannya bukan karena mereka punya perasaan, tapi karena mereka sangat patuh pada aturan **Logika Boolean**. Di level paling bawah, komputer hanya mengenal dua status: **1 (Ada Listrik)** dan **0 (Tidak Ada Listrik)**.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" class="module-img" onclick="openModal('Gerbang Logika', 'Ribuan gerbang logika kecil di dalam chip bergabung untuk membentuk keputusan kompleks.')">
+                    <h3 style="margin-top:1rem;">A. Gerbang Logika (Logic Gates)</h3>
+                    <p>Logika **IF/ELSE** yang kita tulis dalam bahasa pemrograman akan diterjemahkan menjadi aliran listrik di chip silikon melalui gerbang-gerbang ini:</p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><b>AND:</b> Hasilnya BENAR hanya jika SEMUA syarat terpenuhi.</li>
+                        <li><b>OR:</b> Hasilnya BENAR jika salah satu saja syarat terpenuhi.</li>
+                        <li><b>NOT:</b> Membalikkan keadaan (Benar jadi Salah, 1 jadi 0).</li>
+                    </ul>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <h3 style="margin-top:1rem;">B. Variabel & Tipe Data</h3>
+                    <p>Program butuh mengingat sesuatu. **Variabel** adalah nama untuk sebuah kotak penyimpanan di memori. Kita bisa menyimpan angka (Integer), teks (String), atau status benar/salah (Boolean). Contoh: <code>skor_pemain = 100</code>.</p>
+                </div>
+            </div>
+
+            <!-- BAGIAN 02 -->
+            <div class="materi-card">
+                <h2>02. Algoritma & Struktur Data</h2>
+                <p>Jika pemrograman adalah bahasanya, maka **Algoritma** adalah ceritanya. Algoritma adalah urutan langkah logis untuk menyelesaikan masalah.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800" class="module-img" onclick="openModal('Tentang Array', 'Indeks Array dimulai dari 0 karena ia menghitung jarak (offset) dari alamat memori awal.')">
+                    <h3 style="margin-top:1rem;">A. Array (Rak Data)</h3>
+                    <p>Bayangkan kamu punya daftar nama teman. Daripada membuat 10 variabel berbeda, kamu bisa menggunakan **Array**. Array adalah satu tempat yang bisa menyimpan banyak data sekaligus. Setiap data punya nomor urut (Indeks). Ingat! Di komputer, hitungan selalu mulai dari <b>0</b>.</p>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <h3 style="margin-top:1rem;">B. Looping (Perulangan)</h3>
+                    <p>Looping adalah kemampuan komputer untuk melakukan hal yang sama berkali-kali secara otomatis. Misal: mencetak 1000 undangan atau menghitung total belanjaan dalam keranjang. Ini sangat menghemat waktu kerja programmer.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📝 Formula Dasar:</h4>
+                    <p><b>Algoritma yang Baik</b> = Jelas (Tidak bermakna ganda), Teratur (Urut), dan Berakhir (Ada tujuannya).</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                <a href="pertemuan-1.html" class="btn btn-outline" style="width: auto;">← P1: Fisik</a>
+                <a href="pertemuan-3.html" class="btn" style="width: auto;">Lanjut ke P3 →</a>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sim-card">
+                <h3>🛒 Simulator Kasir</h3>
+                <p class="sim-desc">Cek saldo dengan Logika IF.</p>
+                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px;"><span>Saldo</span><span id="saldo" style="color:var(--success);">Rp 50.000</span></div>
+                <div class="budget-bar"><div class="budget-fill" id="fill"></div></div>
+                <div class="item-grid">
+                    <button class="item-btn" onclick="buy(20000)">Susu (20rb)</button>
+                    <button class="item-btn" onclick="buy(15000)">Roti (15rb)</button>
+                </div>
+                <div class="array-view">// Keranjang [Array]:<br>[ <span id="cart" style="color:white;"></span> ]</div>
+                <div class="status-log" id="log" style="margin-top:1rem;">Siap belanja...</div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<div id="detailModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle">Detail</h3>
+        <p id="modalDesc">...</p>
+        <button class="btn" onclick="closeModal()" style="margin-top: 1.5rem; background: var(--bg); color: var(--text-main); border: 1px solid var(--border);">Tutup Bacaan</button>
+    </div>
+</div>
+
+<script>
+function openModal(t, d) { document.getElementById('modalTitle').innerText = t; document.getElementById('modalDesc').innerText = d; document.getElementById('detailModal').style.display = 'flex'; }
+function closeModal() { document.getElementById('detailModal').style.display = 'none'; }
+let tot = 0; const LIM = 50000; let items = [];
+function buy(p) {
+    if(tot + p > LIM) { document.getElementById('log').innerText = "> Saldo kurang!"; return; }
+    tot += p; items.push(p); update();
+}
+function update() {
+    document.getElementById('saldo').innerText = "Rp " + (LIM - tot).toLocaleString('id-ID');
+    document.getElementById('fill').style.width = (tot / LIM * 100) + '%';
+    document.getElementById('cart').innerText = items.join(', ');
+    document.getElementById('log').innerText = "> Item berhasil ditambah.";
+}
+</script>
+</body>
+</html>

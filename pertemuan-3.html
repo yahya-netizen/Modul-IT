@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P3: Mencipta & Rekam Jejak — Jazz Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blueprint-box { background: #0f172a; color: #38bdf8; padding: 1.25rem; border-radius: 8px; font-family: monospace; }
+        .input-dark { width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: white; margin-bottom: 10px; outline: none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">🎓 Jazz Academy</a>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="pertemuan-1.html">P1</a>
+            <a href="pertemuan-2.html">P2</a>
+            <a href="pertemuan-3.html" class="active">P3</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <header class="lesson-header">
+        <h1>Mencipta & Rekam Jejak</h1>
+        <p class="lesson-meta">Topik: 7. OOP & 4. Database</p>
+    </header>
+
+    <div class="content-layout">
+        <div class="materi-container">
+            <!-- BAGIAN 01 -->
+            <div class="materi-card">
+                <h2>01. Pemrograman Berorientasi Objek (OOP)</h2>
+                <p>Bagaimana cara membuat aplikasi besar yang terdiri dari jutaan baris kode tanpa membuatnya berantakan? Jawabannya adalah **OOP**. Konsep ini mengajarkan kita untuk mengatur kode seperti benda-benda di dunia nyata.</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800" class="module-img" onclick="openModal('Pilar OOP', 'OOP memiliki 4 pilar utama: Enkapsulasi, Abstraksi, Warisan (Inheritance), dan Polimorfisme.')">
+                    <h3 style="margin-top:1rem;">A. Class (Cetakan) & Object (Benda)</h3>
+                    <p>Bayangkan kamu punya pabrik mainan. **Class** adalah cetakan besinya (pola), sedangkan **Object** adalah mainan robot yang keluar dari cetakan itu. Satu cetakan bisa menghasilkan ribuan robot yang memiliki fungsi dasar yang sama.</p>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <h3 style="margin-top:1rem;">B. Atribut & Method</h3>
+                    <p>Setiap Object punya dua hal penting:</p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><b>Atribut:</b> Data atau sifat (Contoh: Warna robot, Tinggi robot).</li>
+                        <li><b>Method:</b> Aksi atau kemampuan (Contoh: Robot berjalan, Robot bicara).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BAGIAN 02 -->
+            <div class="materi-card">
+                <h2>02. Database (Basis Data)</h2>
+                <p>Kenapa saat kamu membuka Instagram, daftar teman dan postinganmu masih ada di sana? Itu karena data tersebut disimpan di dalam **Database**. Berbeda dengan RAM yang mudah lupa, Database menyimpan data secara **Persistent** (Abadi).</p>
+                
+                <div style="margin: 1.5rem 0;">
+                    <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800" class="module-img" onclick="openModal('MySQL & Tabel', 'Database Relasional seperti MySQL menyimpan data dalam tabel yang saling terhubung.')">
+                    <h3 style="margin-top:1rem;">A. Struktur Tabel</h3>
+                    <p>Data diatur dalam tabel yang terdiri dari **Baris (Row)** dan **Kolom (Column)**. Setiap baris mewakili satu data unik (misal: satu orang siswa), dan setiap kolom mewakili jenis informasinya (misal: Nama, Umur, Alamat).</p>
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <h3 style="margin-top:1rem;">B. Relasi & Primary Key</h3>
+                    <p>Agar data tidak tertukar, setiap baris memiliki **ID Unik** yang disebut **Primary Key**. Kita juga bisa menghubungkan dua tabel yang berbeda melalui relasi, sehingga informasi tidak perlu ditulis berulang-ulang dan lebih hemat memori.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📊 Kesimpulan:</h4>
+                    <p>OOP membantu kita membangun struktur aplikasinya, sedangkan Database bertugas menjaga memorinya agar tidak pernah hilang.</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                <a href="pertemuan-2.html" class="btn btn-outline" style="width: auto;">← P2: Logika</a>
+                <a href="index.html" class="btn" style="width: auto;">Selesai Belajar! 🎓</a>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sim-card">
+                <h3>🗄️ Database Live</h3>
+                <p class="sim-desc">Simpan data ke tabel secara permanen.</p>
+                <div class="blueprint-box" style="margin-bottom:1rem; font-size:0.7rem;">class Siswa { name }</div>
+                <input type="text" id="name" class="input-dark" placeholder="Nama siswa...">
+                <button class="btn" onclick="save()">Simpan ke DB</button>
+                <div id="list" style="margin-top:1.5rem; font-size:0.8rem; color:#94a3b8; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;"></div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<div id="detailModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle">Detail</h3>
+        <p id="modalDesc">...</p>
+        <button class="btn" onclick="closeModal()" style="margin-top: 1.5rem; background: var(--bg); color: var(--text-main); border: 1px solid var(--border);">Tutup Bacaan</button>
+    </div>
+</div>
+
+<script>
+function openModal(t, d) { document.getElementById('modalTitle').innerText = t; document.getElementById('modalDesc').innerText = d; document.getElementById('detailModal').style.display = 'flex'; }
+function closeModal() { document.getElementById('detailModal').style.display = 'none'; }
+let db = [];
+function save() {
+    let n = document.getElementById('name').value;
+    if(!n) return;
+    db.push(n);
+    document.getElementById('name').value = "";
+    document.getElementById('list').innerHTML = db.map((x, i) => `<div>ID: ${101+i} | Nama: ${x}</div>`).reverse().join('');
+}
+</script>
+</body>
+</html>
